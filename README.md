@@ -1,6 +1,6 @@
 DBMS Solutions
 
-Hey there Everyone!
+**_Hey there Everyone!_**
 
 Glad to see you guys here. You're at right place if you are looking for the solutions of Infosys Certified SQL Developer on LEX Platform.
 
@@ -13,4 +13,4 @@ Also, I would like to make a request that Please update me the changes/incorrect
 So go ahead and **fork** this repo and include your efficient solutions!!
 
 
-**Really looking forward to add your solutions into this Repo and getting chances to learn from you guys!**
+_**Really looking forward to add your solutions into this Repo and getting chances to learn from you guys!**_
