@@ -1,0 +1,25 @@
+SELECT Prodid, Pdesc FROM Product WHERE Prodid IN 
+(SELECT Prodid FROM Saledetail GROUP BY Prodid HAVING SUM(Quantity)=
+(SELECT MIN(SUM(Quantity)) FROM Saledetail GROUP BY Prodid))
+
+#Step1: We need to Calculate the Min. sum of a quantity
+
+SELECT MIN(SUM(Quantity)) FROM Saledetail GROUP BY Prodid
+
+--> This is a single row query
+
+Step2: Now we can fetch those Prod ids which have min quantity
+
+SELECT Prodid FROM Saledetail GROUP BY Prodid HAVING SUM(Quantity)=
+(SELECT MIN(SUM(Quantity)) FROM Saledetail GROUP BY Prodid)
+
+Step3: Now we can use this Prod id to fetch all the required Details from Product table
+
+--> So this makes our final query
+
+SELECT Prodid, Pdesc FROM Product WHERE Prodid IN 
+(SELECT Prodid FROM Saledetail GROUP BY Prodid HAVING SUM(Quantity)=
+(SELECT MIN(SUM(Quantity)) FROM Saledetail GROUP BY Prodid))
+
+
+
