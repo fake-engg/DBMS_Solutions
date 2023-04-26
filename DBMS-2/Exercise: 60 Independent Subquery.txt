@@ -1,0 +1,9 @@
+SELECT Sname FROM (select sm.Sname, sl.Sid, COUNT(sd.Quantity)
+FROM Salesman sm JOIN Sale sl ON sm.Sid=sl.Sid JOIN Saledetail sd ON sl.Saleid=sd.Saleid
+GROUP BY sl.Sid, sm.Sname HAVING COUNT(sd.Quantity)>2);
+
+Made some changes in the Query. I missed one logic in the previous query.
+Question was asked for "Atleast 2 Sales"
+
+
+SELECT Sname FROM Salesman WHERE Sid IN (SELECT Sid FROM Sale GROUP BY Sid HAVING COUNT(Saleid)>=2);
