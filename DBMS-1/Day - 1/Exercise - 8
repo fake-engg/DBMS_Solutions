@@ -1,0 +1,1 @@
+SELECT Prodid, Pdesc, Category, Discount FROM Product WHERE Pdesc IS NULL;
