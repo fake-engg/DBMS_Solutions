@@ -1,0 +1,3 @@
+SELECT Designation, Salary
+FROM Empdetails
+WHERE Designation IN ('Manager','Billing Staff')
