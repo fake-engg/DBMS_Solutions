@@ -1,0 +1,4 @@
+SELECT Itemcode, Descr, Price
+FROM Item
+WHERE Category ='B'
+AND Descr LIKE '%Shirt%' OR Descr LIKE '%Skirt%'
