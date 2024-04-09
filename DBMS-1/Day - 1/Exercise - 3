@@ -1,0 +1,18 @@
+CREATE TABLE Match (
+MId INTEGER,
+TId INTEGER CONSTRAINT match_tid_fk REFERENCES Tournament(TId),
+Player1 INTEGER,
+Player2 INTEGER,
+MatchDt DATE NOT NULL,
+Winner INTEGER,
+Score VARCHAR2(30) NOT NULL,
+CONSTRAINT plyr_chk CHECK(Player1<>Player2),
+CONSTRAINT match_mid_pk PRIMARY KEY(MId, TId),
+CONSTRAINT match_pid_fk1 FOREIGN KEY(Player1) REFERENCES Player(PId),
+CONSTRAINT match_pid_fk2 FOREIGN KEY(Player2) REFERENCES Player(PId),
+CONSTRAINT match_win FOREIGN KEY(Winner) REFERENCES Player(PId));
+
+
+Note:
+* All table level constraints are defined after the column level contraints.
+* Composite Primary keys are defined as a table level constraint
