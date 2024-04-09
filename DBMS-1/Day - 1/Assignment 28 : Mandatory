@@ -1,0 +1,3 @@
+SELECT Quotationid, Sname
+FROM Quotation
+WHERE Qstatus IN ('Accepted','Rejected');
