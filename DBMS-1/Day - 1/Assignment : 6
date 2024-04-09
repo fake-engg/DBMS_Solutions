@@ -1,0 +1,3 @@
+SELECT Roid, Location
+FROM Retailoutlet
+WHERE Managerid IS NULL;
