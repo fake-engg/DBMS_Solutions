@@ -1,0 +1,2 @@
+SELECT NVL(Pdesc,'No Description') as Pdesc, Discount
+FROM Product;
