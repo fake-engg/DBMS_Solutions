@@ -1,0 +1,1 @@
+SELECT Prodid, SUBSTR(Pdesc,1,5) Pdesc_five, Category from Product
