@@ -1,0 +1,15 @@
+METHOD : 1
+==========
+SELECT LTRIM(Roid,'R') as numericroid
+FROM Retailoutlet
+
+We can solve this problem by using LTRIM() function where we trim the 'R' at the beginning of the Roid.
+
+
+METHOD : 2
+==========
+
+SELECT SUBSTR(Roid,2,4) as numericroid
+FROM Retailoutlet
+
+We can use SUBSTR() as well. Where we are extracting all the characters except the 1st one.
