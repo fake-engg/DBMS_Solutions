@@ -1,0 +1,6 @@
+SELECT Prodid, Pdesc, Price as "Old_Price",
+CASE Category
+WHEN 'Sports' THEN ROUND((0.775*Price),2)
+END as "New_Price"
+FROM Product
+WHERE Category = 'Sports'
