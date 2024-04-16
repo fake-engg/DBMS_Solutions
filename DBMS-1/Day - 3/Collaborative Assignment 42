@@ -1,0 +1,6 @@
+SELECT Orderid,ROUND(MONTHS_BETWEEN(Pymtdate,Orderdate),2) AS "No of Months"
+FROM Orders
+WHERE MONTHS_BETWEEN(Pymtdate,Orderdate) > 0.1
+AND Amountpaid <> 0
+
+#Note: Month between column has been rounded off upto 2 digits.
