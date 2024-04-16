@@ -1,0 +1,2 @@
+SELECT Orderid, ABS(TO_DATE(Orderdate,'DD-MM-YYYY') - TO_DATE(Pymtdate,'DD-MM-YYYY')) AS noofdays
+FROM Orders
