@@ -1,0 +1,6 @@
+SELECT Itemcode
+FROM Item
+WHERE ABS(Qtyonhand - Reorderlevel) > 50
+
+Note: In the question, it was asked to change the difference to positive values.
+So, As per the use case, we have used ABS() in the query.
