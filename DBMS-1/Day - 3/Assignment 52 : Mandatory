@@ -1,0 +1,7 @@
+SELECT Empid, Salary,
+CASE 
+WHEN Salary < 2500 THEN 'Class 3'
+WHEN Salary >= 2500 AND Salary <= 5000 THEN 'Class 2'
+WHEN Salary > 5000 THEN 'Class 1'
+END AS salgrade
+FROM Empdetails
