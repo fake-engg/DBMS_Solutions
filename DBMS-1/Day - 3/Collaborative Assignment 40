@@ -1,0 +1,15 @@
+SELECT DISTINCT Itemtype,
+CASE 
+WHEN Price < 499 THEN 'Cheap'
+WHEN Price > 500 AND Price <1999 THEN 'Affordable'
+WHEN Price > 2000 AND Price < 4999 THEN 'Expensive'
+ELSE 'Very Expensive'
+END  "CLASSIFICATION"
+FROM Item
+ORDER BY 1,2
+
+
+Note:
+====
+- Distinct itemtype is fetched as we wanted only uniques combination.
+- 
