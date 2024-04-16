@@ -1,0 +1,10 @@
+SELECT Saleid, ROUND(ABS(MONTHS_BETWEEN(Sldate, SYSDATE)),1) AS "MONTH_AGED"
+FROM Sale
+
+Steps: 
+- First months betweeen 2 dates is calculated.
+- Then it's absolute value is taken as per the use case.
+- Then it is being rounded off upto 1 decimal place.
+
+
+Conditions: Show positive values for no. of months and round it to 1 decimal places.
