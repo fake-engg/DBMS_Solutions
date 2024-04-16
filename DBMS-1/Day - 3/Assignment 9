@@ -1,0 +1,5 @@
+SELECT COUNT(Orderid) AS totalorderscount,
+COUNT(CASE 
+WHEN Amountpaid <> 0 THEN 1
+END) as paidorderscount
+FROM Orders
