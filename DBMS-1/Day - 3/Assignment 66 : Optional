@@ -1,0 +1,4 @@
+select SUM(Quotedprice) as totalprice
+FROM Quotation
+WHERE LOWER(SUBSTR(Qdate,4,3)) = 'jun'
+AND Qstatus = 'Accepted'
