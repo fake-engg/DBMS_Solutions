@@ -1,0 +1,9 @@
+Display product id and total quantity for products that have been sold more than once.
+Consider only those sale instances when the quantity sold was more than 1.
+
+
+SELECT Prodid, sum(Quantity) as qty_sold
+FROM Saledetail
+WHERE Quantity >1
+GROUP BY Prodid
+HAVING count(Prodid)>1
