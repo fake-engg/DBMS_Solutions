@@ -1,0 +1,10 @@
+
+##Display pymtmode, and total number of payments for those payments which were paid before the year 2015 and total number of payments should be more than 1.
+
+
+
+SELECT Pymtmode, COUNT(*) as pymtcount
+FROM Orders
+WHERE TO_CHAR(Pymtdate,'YYYY')<2015
+GROUP BY Pymtmode
+HAVING COUNT(*)>1
