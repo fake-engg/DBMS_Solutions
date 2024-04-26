@@ -1,0 +1,7 @@
+SELECT i.Itemcode, Descr
+FROM Item i 
+JOIN Quotation q
+ON i.Itemcode=q.Itemcode
+WHERE i.Price=q.Quotedprice
+GROUP BY i.Itemcode, Descr
+HAVING COUNT(Quotationid)>1
