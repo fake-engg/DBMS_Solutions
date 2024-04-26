@@ -1,0 +1,5 @@
+SELECT DISTINCT Sname, q.Quotationid
+FROM Quotation q
+JOIN Orders o
+ON q.Quotationid=o.Quotationid
+WHERE ABS(Orderdate - Delivereddate) <= 5
