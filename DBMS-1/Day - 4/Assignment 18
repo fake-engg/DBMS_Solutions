@@ -1,0 +1,8 @@
+SELECT i.Itemcode, Sname, sum(Qtyordered) as totalquantity
+FROM Item i
+JOIN Quotation q
+ON i.Itemcode=q.Itemcode
+JOIN Orders o
+ON q.Quotationid=o.Quotationid
+GROUP BY i.Itemcode, Sname
+HAVING SUM(Qtyordered)>=100
