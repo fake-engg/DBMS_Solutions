@@ -1,0 +1,9 @@
+Retrieve the Supplier Name for those quotations whose average quoted price for all quotations quoted by him is more than 500 and the quotation status is closed.
+Also display average quoted price.
+
+
+SELECT Sname, AVG(Quotedprice) as "Average quoted price"
+FROM Quotation 
+WHERE LOWER(Qstatus) = 'closed'
+GROUP BY Sname
+HAVING AVG(Quotedprice)>500
