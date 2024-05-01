@@ -1,0 +1,6 @@
+SELECT Sname
+FROM Salesman sm
+WHERE NOT EXISTS
+(SELECT Saleid
+FROM Sale s
+WHERE sm.Sid=s.Sid)
