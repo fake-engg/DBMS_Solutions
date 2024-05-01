@@ -1,0 +1,24 @@
+SELECT sm.Sid, Sname, Location
+FROM Salesman sm
+JOIN Sale sl
+ON sm.Sid=sl.Sid
+JOIN Saledetail s
+ON s.Saleid=sl.Saleid
+JOIN Product p
+ON p.Prodid=s.Prodid
+GROUP BY sm.Sid, Sname, Location
+HAVING AVG((Price - (Price * Discount / 100)) *Quantity) > (SELECT AVG((Price - (Price * Discount / 100)) *Quantity) as "Amount"
+FROM Product p
+JOIN Saledetail s
+ON p.Prodid=s.Prodid)
+
+
+
+Previous Query (Finding Salesmen with Above Average Sales):
+It calculated the average sale amount for each salesman and then compared it to the overall average sale amount (calculated in the subquery).
+The HAVING clause filtered for salesmen whose average sales were higher than the overall average.
+
+Current Query (Finding Salesmen with High Total Sales):
+This query calculates the total sales amount for each salesman. 
+It then compares this total to the overall average sale amount (still calculated in the subquery). 
+The HAVING clause now finds salesmen with a total sales amount that is greater than the average sale amount (regardless of how many sales they made).
