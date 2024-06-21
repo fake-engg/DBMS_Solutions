@@ -1,0 +1,5 @@
+SELECT Sname FROM Salesman sm
+WHERE EXISTS
+(SELECT 1 FROM Sale s
+WHERE s.Sid = sm.Sid
+AND LOWER(SUBSTR(Sldate,4,6)) = 'jun-15')
